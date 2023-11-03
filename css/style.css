@@ -55,6 +55,7 @@ header .container {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
 }
 header .container .logo {
   color: var(--main-color);
@@ -66,7 +67,7 @@ header .container .logo {
   align-items: center;
 }
 
-nav ul {
+nav > ul {
   display: flex;
   flex-wrap: wrap;
 }
@@ -75,7 +76,7 @@ nav ul {
     width: 100%;
   }
 }
-nav ul > li > a {
+nav > ul > li > a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,13 +90,13 @@ nav ul > li > a {
   transition: var(--main-transition) ease-in-out;
 }
 @media (max-width: 767px) {
-  nav ul > li > a {
+  nav > ul > li > a {
     font-size: 13px;
     height: 40px;
     padding: 0 10px;
   }
 }
-nav ul > li > a::before {
+nav > ul > li > a::before {
   position: absolute;
   content: "";
   height: 3px;
@@ -105,14 +106,94 @@ nav ul > li > a::before {
   left: -100%;
   transition: var(--main-transition) ease-in-out;
 }
-nav ul > li > a:hover {
+nav > ul > li > a:hover {
   color: var(--main-color);
   background-color: #f1f1f1;
   overflow: hidden;
 }
-nav ul > li > a:hover::before {
+nav > ul > li > a:hover::before {
   left: 0;
 }
+
+/* Start Mega Menu */
+.mega-menu {
+  display: flex;
+  gap: 40px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 50px);
+  width: 100%;
+  padding: 20px;
+  transition: top var(--main-transition);
+  background-color: #fff;
+  border-bottom: 3px solid var(--main-color);
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+nav > ul > li:last-child:hover .mega-menu {
+  opacity: 1;
+  visibility: visible;
+  z-index: 100;
+  top: calc(100%);
+}
+.mega-menu .image img {
+  max-width: 90%;
+}
+.mega-menu .links {
+  flex: 2;
+}
+.mega-menu .links li {
+  margin: 5px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.mega-menu .links li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+.mega-menu .links li::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  z-index: -1;
+  left: 0;
+  height: 100%;
+  transition: var(--main-transition) ease-in-out;
+  background-color: #ececec;
+}
+.mega-menu .links li:hover::before {
+  width: 100%;
+}
+.mega-menu .links li a {
+  padding: 20px 10px;
+  color: var(--main-color-alt);
+  font-size: 18px;
+  font-weight: bold;
+}
+.mega-menu .links li i {
+  margin-right: 10px;
+}
+@media (max-width: 768px) {
+  .mega-menu {
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  .mega-menu .links li:last-child {
+    border-bottom: 1px solid #ddd;
+  }
+  .mega-menu .links li a {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .mega-menu .image {
+    display: none;
+  }
+}
+/* End Mega Menu */
+
 /* End Header */
 /* Start Landing */
 .landing {
@@ -155,10 +236,9 @@ nav ul > li > a:hover::before {
   position: relative;
   width: 600px;
   height: 300px;
-  margin-bottom: 150px;
+  margin-bottom: 100px;
   animation: up-and-down 5s linear infinite;
 }
-
 .landing .go-down {
   color: var(--main-color);
   position: absolute;
@@ -193,6 +273,7 @@ nav ul > li > a:hover::before {
   }
 }
 /* End Landing */
+
 /* Start Animation */
 @keyframes up-and-down {
   0%,
