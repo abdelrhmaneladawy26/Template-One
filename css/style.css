@@ -29,7 +29,13 @@ a {
   padding: 0 15px;
   margin: 0 auto;
 }
-
+/* Rate */
+.rate i {
+  font-size: 20px;
+}
+.filled {
+  color: #ffc107;
+}
 /* Start Main title */
 .main-title {
   border: 2px solid #ddd;
@@ -437,6 +443,7 @@ nav > ul > li:last-child:hover .mega-menu {
 .features .container .box .image::before {
   position: absolute;
   content: "";
+  top: -1px;
   width: 100%;
   height: 100%;
 }
@@ -510,20 +517,19 @@ nav > ul > li:last-child:hover .mega-menu {
 }
 .features .container .quality a {
   border-color: #f44036;
+  color: #f44036;
 }
 .features .container .quality:hover a::after {
   width: 100%;
   background-color: #f44036;
 }
 
-.features .container .time .image::before {
-  background-color: rgba(255, 0, 0, 0.144);
-}
 .features .container .time h2::after {
   background-color: #009688;
 }
 .features .container .time a {
   border-color: #009688;
+  color: #009688;
 }
 .features .container .time:hover a::after {
   width: 100%;
@@ -531,20 +537,64 @@ nav > ul > li:last-child:hover .mega-menu {
 }
 
 .features .container .time .image::before {
-  background-color: rgba(255, 0, 0, 0.144);
+  background-color: rgb(0 150 136 / 60%);
 }
+
 .features .container .passion h2::after {
   background-color: #03a9f4;
 }
 .features .container .passion a {
   border-color: #03a9f4;
+  color: #03a9f4;
 }
 .features .container .passion:hover a::after {
   width: 100%;
   background-color: #03a9f4;
 }
-
+.features .container .passion .image::before {
+  background-color: rgb(3 169 244 / 60%);
+}
 /* End  Features */
+/* Start Testimonials  */
+.testimonials {
+  background-color: var(--section-background-color);
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.testimonials .main-title {
+  z-index: 1;
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.testimonials .container .box {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.testimonials .container .box img {
+  position: absolute;
+  width: 100px;
+  top: -50px;
+  right: -10px;
+  border-radius: 50%;
+  border: 10px solid var(--section-background-color);
+}
+.testimonials .container .box h3 {
+  font-size: 20px;
+}
+.testimonials .container .box .title {
+  color: var(--main-color);
+  font-size: 18px;
+}
+.testimonials .container .box p {
+  line-height: 1.7;
+  color: #777;
+}
+/* End Testimonials  */
 
 /* Start Animation */
 @keyframes up-and-down {
