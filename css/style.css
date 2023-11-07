@@ -595,6 +595,172 @@ nav > ul > li:last-child:hover .mega-menu {
   color: #777;
 }
 /* End Testimonials  */
+/* Start Team */
+.team {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.team .container .box {
+  position: relative;
+}
+.team .container .box::before {
+  position: absolute;
+  content: "";
+  width: calc(100% - 60px);
+  height: 100%;
+  right: 0;
+  top: 0;
+  background-color: #f3f3f3;
+  z-index: -2;
+  border-radius: 10px;
+}
+.team .container .box img {
+  max-width: 100%;
+  border-radius: 10px;
+
+  transition: var(--main-transition);
+}
+.team .container .box:hover img {
+  filter: grayscale(100%);
+}
+.team .container .box::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.team .container .box:hover::after {
+  width: calc(100% - 60px);
+}
+.team .container .box .data {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 50px;
+}
+.team .container .box .data .social {
+  line-height: 3;
+  font-size: 15px;
+}
+.team .container .box .data .social a {
+  font-size: 20px;
+  color: #777;
+  transition: var(--main-transition);
+}
+.team .container .box .data .social a:hover {
+  color: var(--main-color);
+}
+.team .container .box .info {
+  padding-left: 80px;
+}
+.team .container .box .info h3 {
+  transition: var(--main-transition);
+}
+.team .container .box:hover .info h3 {
+  color: var(--main-color);
+}
+.team .container .box .info p {
+  font-size: 20px;
+  color: #333;
+}
+/* End Team */
+/* Start Services */
+.services {
+  background-color: var(--section-background-color);
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.services .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.services .container .box {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  counter-increment: services;
+  transition: var(--main-transition);
+}
+.services .container .box::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 0;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--main-color);
+  transition: var(--main-transition);
+}
+.services .container .box:hover {
+  transform: translateY(-10px);
+}
+.services .container .box:hover::before {
+  width: 100%;
+}
+.services .container .box > i {
+  display: block;
+  margin: 40px auto;
+  text-align: center;
+  color: #d5d5d5;
+}
+.services .container .box > h3 {
+  text-align: center;
+  color: var(--main-color);
+  margin: 30px 0;
+  font-size: 25px;
+}
+.services .container .box .info {
+  background-color: #f9f9f9;
+  padding: 15px;
+  text-align: right;
+  position: relative;
+}
+.services .container .box .info a {
+  font-size: 20px;
+  color: var(--main-color);
+}
+.services .container .box .info::before {
+  content: "0" counter(services);
+  position: absolute;
+  background-color: var(--main-color);
+  color: white;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 80px;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px px;
+  z-index: 2;
+}
+.services .container .box .info::after {
+  content: "";
+  position: absolute;
+  background-color: #d5d5d5;
+  top: 0;
+  left: 63px;
+  width: 50px;
+  height: calc(100% + 0.4px);
+  transform: skewX(-30deg);
+  z-index: 1;
+}
+/* End Services */
 
 /* Start Animation */
 @keyframes up-and-down {
