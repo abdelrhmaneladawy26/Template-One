@@ -761,7 +761,54 @@ nav > ul > li:last-child:hover .mega-menu {
   z-index: 1;
 }
 /* End Services */
+/* Start Our Skills */
+.our-skills {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  position: relative;
+}
+.our-skills .container {
+  display: flex;
+  align-items: center;
+}
 
+.our-skills .container .skills {
+  flex: 1;
+}
+.our-skills .container .image img {
+  max-width: 100%;
+}
+.skills .skill {
+  width: 100%;
+}
+.skills .skill h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skills .skill h3 span {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--main-color);
+}
+.skills .skill .progress {
+  position: relative;
+  height: 30px;
+  max-width: 100%;
+  background-color: #ddd;
+}
+.skills .skill .progress span {
+  position: absolute;
+  height: 100%;
+  background-color: var(--main-color);
+}
+@media (max-width: 991px) {
+  .our-skills .container {
+    flex-wrap: wrap;
+  }
+}
+/* End Our Skills */
 /* Start Animation */
 @keyframes up-and-down {
   0%,
